@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    
+
+    <!-- <div class="container">
+        <div id="nBullets">Bullets</div>
+        <div class="button-div">
+            <button id="js-shoot-btn">Shoot =></button>
+            <button id="js-reload-btn">Reload</button>
+        </div>
+    </div> -->
+
+    New Password: <br>
+    <input id="pass-1" type="Password" name="" id=""><br><br>
+    Confirm Password: <br>
+    <input id="pass-2" type="Password" name="" id=""> <br> <br>
+
+    <button id="sub-btn" type="submit">Submit</button>
+    
+
+
+
+    <script>
+
+    //     // keyboard events
+    //   let pass1=  document.getElementById('pass-1');
+    //    let pass2= document.getElementById('pass-2');
+
+    //    pass1.addEventListener('keypress', (events) => {
+    //         console.log(event.key)
+    //    })
+
+    //    pass2.addEventListener('keyup', (events) => {
+    //         console.log(event.key)
+    //    })
+ 
+        // Validating password;
+
+
+       let pass1= document.getElementById('pass-1');
+       let pass2= document.getElementById('pass-2');
+       let submitButton = document.getElementById('sub-btn')
+
+       submitButton.addEventListener('click', () => {
+        if(pass2.value != pass1.value){
+            alert("password mismatched, please try again")
+        } else {
+            alert("data submitted successfully")
+        }
+       })
+
+
+
+
+
+
+
+
+        // // Handling mouse events
+        // let bElement = document.getElementById('nBullets');
+        // let shootBtn = document.getElementById('js-shoot-btn');
+        // let reloadBtn = document.getElementById('js-reload-btn');
+
+        // let bulletNum = 20;
+        // bElement.innerHTML = `Bullets: ${bulletNum}`;
+
+        // shootBtn.addEventListener('click', () => {
+        //     if(bulletNum > 0 ) {
+        //         bulletNum--;
+        //         bElement.innerHTML = `Bullets: ${bulletNum}`;
+        //     } else if(bulletNum === 0) {
+        //         alert('No bullet, click the reload button');
+        //     }
+        // })
+
+        // reloadBtn.addEventListener('click', () => {
+        //     bulletNum = 20;
+        //     bElement.innerHTML = `Bullets: ${bulletNum}`;
+        //     alert('Happy reload')
+        // })
+
+        // // Handling keyboard events
+
+    </script>
+
+
+
+<a href="booleans.html">learn about booleans</a>
+<a href="calculator.html">use my calculator</a>
+<a href="index.HTML">go to home page</a>
+<a href="Heads-Tails-game.html">play heads and tails game</a>
+<a href="Inheritance.html">learn inheritance</a>
+<a href="Learning functions.html">learn about functions</a>
+<a href="loops.HTML">learn about loops</a>
+<a href="Object.htm">see object</a>
+<a href="oop.HTML">learn oop</a>
+<a href="to-do-list.HTML">use to do list</a>
+
+
+
+
+
+
+
+</body>
+</html>

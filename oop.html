@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object oriented Programming</title>
+</head>
+<body>
+
+    <div id="result" ></div>
+    
+    <script>
+        // Class constrution
+        class Benz {
+            constructor(name, model, engine, color) {
+                this.name = name;
+                this.model = model;
+                this.engine = engine;
+                this.color = color;
+            }
+
+            showCarFeatures () {
+                document.getElementById("result")
+                .innerHTML = `
+                    Name: ${this.name}<br/>
+                    Model: ${this.model}<br/>
+                    Engine: ${this.engine}<br/>
+                    Color: ${this.color}<br/>
+                `
+            }
+        }
+
+        // Object: instance of a new class
+        
+        const GLK = new Benz("GLK", "GLK-2024", "V8", "Red");
+
+        GLK.showCarFeatures()
+    </script>
+ <a href="booleans.html">learn about booleans</a>
+ <a href="calculator.html">use my calculator</a>
+ <a href="Events.HTML">ulearn events</a>
+ <a href="Heads-Tails-game.html">play heads and tails game</a>
+ <a href="Inheritance.html">learn inheritance</a>
+ <a href="Learning functions.html">learn about functions</a>
+ <a href="loops.HTML">learn about loops</a>
+ <a href="Object.htm">see object</a>
+ <a href="index.HTML">go to home page</a>
+ <a href="to-do-list.HTML">use to do list</a>
+ 
+
+
+
+
+
+</body>
+</html>

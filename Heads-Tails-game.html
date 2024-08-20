@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heads Tails Game</title>
+</head>
+
+
+<style>
+    .para-info{
+        display: none;
+    }
+</style>
+
+<body>
+
+    <h1>Heads and Tails game</h1>
+    <div class="view-info" >
+        <p class=" para-info js-para-info" >
+            Welcome to H1 head and tail games <br>
+            this game is played between two people, <br>
+            the computer user and the AI. <br>
+            heads beat tails and you win <br>
+            You can click h for heads <br>
+            you can click t for tails <br>
+            and to clear the score or reset you can click the c button on your keyborad
+        </p>
+        <button onclick="viewInfo('view game info')" class="js-control-view-btn" >view game info</button>
+    </div> <br>
+    <div class="games-btn-container">
+        <button onclick="playGame('heads')" class="heads-btn">H</button>
+        <button onclick="playGame('tails')" class="tails-btn" >T</button>
+        <button onclick="resetScore()" >clear Score</button>
+        <div class="score-div"></div>
+    </div>
+
+
+
+    <script>
+
+        let scoreDiv = document.querySelector('.score-div')
+
+        let score = {
+            wins: 0,
+            loss: 0
+        }
+
+
+
+        let computerMove = '';
+        function generatedMove() {
+        
+        let randomnumber = Math.random();
+        //logic
+        if(randomnumber > 0 && randomnumber <= 1/2) {
+            computerMove = 'heads';
+            console.log(computerMove)
+        } else if(randomnumber > 1/2 && randomnumber <= 1) {
+            computerMove = 'tails';
+        }
+        console.log(computerMove)
+            return computerMove;
+    }
+
+        let result = '';
+        function playGame(playerMove) {
+           let computerMove = generatedMove();
+            if(computerMove === 'heads') {
+                if(playerMove === 'heads') {
+                    result = "you win";
+                    score.wins++;
+                    scoreDiv.innerHTML = `you picked ${playerMove},\n
+                    computer picked ${computerMove}\n
+                    Result: ${result},\n
+                    score: wins: ${score.wins}, Loss: ${score.loss}`;
+                    console.log(result)
+                }else if (playerMove === 'tails'){
+                    result = 'you loose';
+                    score.loss++;
+                    scoreDiv.innerHTML = `you picked ${playerMove},\n
+                    computer picked ${computerMove}\n
+                    Result: ${result},\n
+                    score: wins: ${score.wins}, Loss: ${score.loss}`;
+                }
+            } else if (computerMove === 'tails') {
+                if(playerMove === 'head'){
+                    result = 'you loose'
+                    score.loss++;
+                    scoreDiv.innerHTML = `you picked ${playermove},\n
+                    computer picked ${computerMove}\n
+                    Result: ${result},\n
+                    score: wins: ${score.wins}, Loss: ${score.loss}`;
+                    console.log(result)
+                }else if (playerMove === 'tails'){
+                    result = 'you win';
+                    score.wins++;
+                    scoreDiv.innerHTML = `you picked ${playerMove},\n
+                    computer picked ${computerMove}\n
+                    Result: ${result},\n
+                    score: wins: ${score.wins}, Loss: ${score.loss}`;
+                    
+                }
+            }
+             return playerMove;   
+        }
+
+        function resetScore(){
+            let playerMove = playGame()
+            score.wins = 0;
+            score.loss = 0;
+              scoreDiv.innerHTML = `you picked ${playerMove},\n
+                 computer picked ${computerMove}\n
+                 Result: ${result},\n
+                 score: wins: ${score.wins}, Loss: ${score.loss}`;
+        }
+
+    
+       document.body.addEventListener("keypress", (event) => {
+        if(event.key ==='h'){
+            playGame('heads');
+        }else if(event.key === 't') {
+            playGame('tails')
+        }else if (event.key === 'c'){
+            resetScore()
+        }if(event.key === 'v'){
+            viewInfo('view game info')
+        }else if (event.key === ''){
+            hideInfo()
+        }
+
+       })
+
+       let controlViewBtn = document.querySelector('.js-control-view-btn');
+       let paraInfo = document.querySelector('.para-info')
+       controlViewBtn.addEventListener('click', () => {
+        if(controlViewBtn.innerHTML === 'view game info'){
+            paraInfo.style.display = 'block';
+            controlViewBtn.innerHTML ='hide game info';
+        }else if(controlViewBtn.innerHTML === 'hide game info'){
+            paraInfo.style.display = 'none';
+            controlViewBtn.innerHTML = 'view game info';
+        }
+       } )
+
+    </script>
+
+
+<a href="booleans.html">learn about booleans</a>
+<a href="calculator.html">use my calculator</a>
+<a href="Events.HTML">ulearn events</a>
+<a href="index.HTML">go to home page</a>
+<a href="Inheritance.html">learn inheritance</a>
+<a href="Learning functions.html">learn about functions</a>
+<a href="loops.HTML">learn about loops</a>
+<a href="Object.htm">see object</a>
+<a href="oop.HTML">learn oop</a>
+<a href="to-do-list.HTML">use to do list</a>
+
+
+
+
+
+
+</body>
+</html>
